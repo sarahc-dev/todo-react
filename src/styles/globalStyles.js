@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'styled-normalize'
 import { COLORS } from './colors'
 import px2rem from '../utils/px2rem'
 import desktopDark from '../images/bg-desktop-dark.jpg'
@@ -9,15 +8,12 @@ import mobileLight from '../images/bg-mobile-light.jpg'
 
 // Uses Styled Components global styles - need to use for styles you set on html or body
 export const GlobalStyles = createGlobalStyle`
-    // Does this make any difference?!
-    ${normalize}
-    
-    html {
+    *, *::before, *::after {
         box-sizing: border-box;
     }
 
-    *, *::before, *::after {
-        box-sizing: inherit;
+    body, h1, p {
+        margin: 0;
     }
 
     img {
@@ -31,6 +27,8 @@ export const GlobalStyles = createGlobalStyle`
         background-repeat: no-repeat;
         font-family: 'Josefin Sans', sans-serif;
         font-size: ${px2rem(18)};
+        padding: ${px2rem(48)} ${px2rem(24)};
+        line-height: 1;
     }
 
     @media (prefers-reduced-motion: reduce) {
