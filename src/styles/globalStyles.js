@@ -55,11 +55,25 @@ const imgDark = ({width}) => {
 export const lightTheme = {
     body: COLORS.lightBackground,
     background: imgLight,
+    listBackground: COLORS.white,
+    listItems: COLORS.lightListItems,
+    footerText: COLORS.lightFooter,
+    dropShadow: COLORS.darkShadow,
+    placeholderText: COLORS.lightFooter,
+    inputText: COLORS.lightInput,
+    checkBorder: COLORS.lightCheckBorder
 }
 
 export const darkTheme = {
     body: COLORS.darkBackground,
     background: imgDark,
+    listBackground: COLORS.darkListBackground,
+    listItems: COLORS.darkListItems,
+    footerText: COLORS.darkFooter,
+    dropShadow: COLORS.darkShadow,
+    placeholderText: COLORS.darkPlaceholder,
+    inputText: COLORS.darkListItems,
+    checkBorder: COLORS.darkCheckBorder
 }
 
 
