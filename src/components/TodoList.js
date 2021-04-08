@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     background: ${({ theme }) => theme.listBackground};
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 `
 
 const Ul = styled.ul`

@@ -1,22 +1,24 @@
 import styled from 'styled-components'
 import px2rem from '../utils/px2rem'
 import { MEDIA } from '../styles/media'
+import { COLORS } from '../styles/colors'
 
 const Container = styled.li`
     display: flex;
     align-items: center;
-    color: ${({ theme }) => theme.listItems};
+    
     font-size: ${px2rem(12)};
     padding: ${px2rem(16)} ${px2rem(20)};
     border-bottom: 1px solid ${({ theme }) => theme.checkBorder};
-    ${props => {
-        if (props.completed) {
-            return `
-            color: blue;
-            `
-        }
-    }}
+    ${({ theme, completed }) => completed ? `color: ${theme.completedItems}; text-decoration: line-through;` : `color: ${theme.listItems};`
+    }
+    
+
 `
+
+// WORKS
+// color: ${({ theme, completed }) => completed ? theme.completedItems : theme.listItems
+//     };
 
 const CheckBtn = styled.button`
     background: none;
@@ -63,9 +65,9 @@ export const ListItem = ({ text, completed, todo, todos, setTodos, theme }) => {
             {text}
             <CloseBtn onClick={deleteHandler}>
             { theme === 'light' ? 
-            <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><title>Delete</title><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></Close>
+            <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><title>Delete</title><path fill="#494C6B" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></Close>
             :
-            <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><title>Delete</title><path fill="#5B5E7E" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></Close>
+            <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><title>Delete</title><path fill="#5B5E7E" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></Close>
             }
             </CloseBtn>
         </Container>

@@ -21,6 +21,7 @@ export const COLORS = {
     darkListItems: 'hsl(234, 39%, 85%)',
     darkFooter: 'hsl(235, 16%, 43%)',
     darkCheckBorder: 'hsl(237, 14%, 26%)',
+    darkDoneItems: 'hsl(233, 14%, 35%)',
     darkShadow: 'hsla(0, 0%, 0%, 0.5)',
     darkPlaceholder: 'hsl(234, 11%, 52%)'
 }
@@ -28,5 +29,5 @@ export const COLORS = {
 
 // - Light Grayish Blue (hover): hsl(236, 33%, 92%)
 // - Dark Grayish Blue:  // create a new todo
-// - Very Dark Grayish Blue: hsl(233, 14%, 35%) // crossed out list
+// - Very Dark Grayish Blue:  // crossed out list
 // - Very Dark Grayish Blue: 
