@@ -88,6 +88,7 @@ function App() {
           todos={todos} 
           setTodos={setTodos}
           filteredTodos={filteredTodos}
+          setFilteredTodos={setFilteredTodos}
           />
         <Filter 
           theme={theme} 
@@ -96,9 +97,13 @@ function App() {
           todos={todos}
           setTodos={setTodos}
           />
+
+        <div style={{marginTop: "3rem", textAlign: "center"}}>
+          Challenge by <a style={{color: "white"}} href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. Coded by <a style={{color: "white"}}
+          href="https://www.sarahclements.me">Sarah</a> 🐳 .
+        </div>
       </Container>
     </ThemeProvider>
-    
   );
 }
 

@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import { Checkbox } from './Checkbox'
 import px2rem from '../utils/px2rem'
 import { MEDIA } from '../styles/media'
+import { Draggable } from 'react-beautiful-dnd'
 
-const Container = styled.li`
+const Li = styled.li`
     align-items: center;
+    background-color: ${({ theme }) => theme.listBackground};
     border-bottom: 1px solid ${({ theme }) => theme.checkBorder};
     display: flex;
     font-size: ${px2rem(12)};
@@ -28,7 +30,7 @@ const CloseBtn = styled.button`
         visibility: hidden;
     }
 
-    ${Container}:hover & {
+    ${Li}:hover & {
         ${MEDIA.desktopLg} {
            visibility: visible;
         }
@@ -45,14 +47,20 @@ const Close = styled.svg`
 }
 `
 
-export const ListItem = ({ text, completed, todo, todos, setTodos, theme }) => {
+export const ListItem = ({ text, completed, todo, todos, setTodos, theme, index }) => {
     
     const deleteHandler = () => {
         setTodos(todos.filter((item) => item.id !== todo.id))
     }
 
     return (
-        <Container completed={completed}>
+        <Draggable draggableId={todo.id} index={index}>
+        {(provided) => (
+            <Li completed={completed}
+            ref={provided.innerRef} 
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            >
             <Checkbox completed={completed} todo={todo} todos={todos} setTodos={setTodos}/>
             <div style={{cursor: "pointer"}}>{text}</div>
             <CloseBtn onClick={deleteHandler} aria-label="Delete item">
@@ -62,6 +70,8 @@ export const ListItem = ({ text, completed, todo, todos, setTodos, theme }) => {
             <Close xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><path fill="#5B5E7E" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></Close>
             }
             </CloseBtn>
-        </Container>
+        </Li>
+        )}
+        </Draggable>
     )
 }

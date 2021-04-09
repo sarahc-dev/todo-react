@@ -65,7 +65,7 @@ export const Todo = ({ inputText, setInputText, todos, setTodos }) => {
         e.preventDefault()
         if (inputText) {
             setTodos([
-            ...todos, {text: inputText, completed: false, id: Math.random() * 1000}
+            ...todos, {text: inputText, completed: false, id: String(Math.random() * 1000)}
             // replace Math.random with package for generating unique ids
         ])
         }
