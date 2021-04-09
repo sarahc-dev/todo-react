@@ -8,8 +8,8 @@ export const COLORS = {
 
     // Light Theme
     lightBackground: 'hsl(0, 0%, 98%)',
-    lightListItems: 'hsl(235, 19%, 35%)', // main list items
-    lightFooter: 'hsl(236, 9%, 61%) ', // create a new todo, footer items
+    lightListItems: 'hsl(235, 19%, 35%)', 
+    lightFooter: 'hsl(236, 9%, 61%) ', 
     lightCheckBorder: 'hsl(236, 33%, 92%)',
     lightDoneItems: 'hsl(233, 11%, 84%)',
     lightShadow: 'hsla(235, 19%, 80%, 0.5)',
@@ -25,9 +25,3 @@ export const COLORS = {
     darkShadow: 'hsla(0, 0%, 0%, 0.5)',
     darkPlaceholder: 'hsl(234, 11%, 52%)'
 }
-
-
-// - Light Grayish Blue (hover): hsl(236, 33%, 92%)
-// - Dark Grayish Blue:  // create a new todo
-// - Very Dark Grayish Blue:  // crossed out list
-// - Very Dark Grayish Blue: 
