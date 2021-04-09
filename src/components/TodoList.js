@@ -5,6 +5,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 const Container = styled.div`
     background: ${({ theme }) => theme.listBackground};
     border-radius: 5px 5px 0 0;
+    transition: background 1s;
 `
 
 const Ul = styled.ul`
@@ -20,7 +21,6 @@ export const TodoList = ({ todos, setTodos, filteredTodos, setFilteredTodos, the
 
         if (!destination) return
         
-
         if (destination.index === source.index) return
 
         const items = Array.from(todos)

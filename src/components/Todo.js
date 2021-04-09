@@ -10,6 +10,7 @@ const Container = styled.div`
     margin: ${px2rem(33)} 0 ${px2rem(16)};
     padding: ${px2rem(16)} ${px2rem(20)};
     width: 100%;
+    transition: background 1s;
 
     ${MEDIA.desktop} {
         margin-bottom: ${px2rem(24)};
@@ -23,6 +24,7 @@ const Input = styled.input`
     color: ${({ theme }) => theme.inputText};
     font: inherit;
     width: 90%;
+    transition: all 1s;
     
     &::placeholder {
         color: ${({ theme }) => theme.placeholderText};
@@ -44,6 +46,7 @@ const Button = styled.button`
     height: 20px;
     margin-right: ${px2rem(12)};
     width: 20px;
+    transition: all 1s;
 
     &:active, &:focus {
         outline: none;

@@ -98,10 +98,11 @@ function App() {
           setTodos={setTodos}
           />
 
-        <div style={{marginTop: "3rem", textAlign: "center"}}>
-          Challenge by <a style={{color: "white"}} href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. Coded by <a style={{color: "white"}}
+        <div style={{color: "cornflowerBlue", marginTop: "4rem", textAlign: "center"}}>
+          Challenge by <a style={{color: "cornflowerBlue"}} href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. Coded by <a style={{color: "cornflowerBlue"}}
           href="https://www.sarahclements.me">Sarah</a> 🐳 .
         </div>
+
       </Container>
     </ThemeProvider>
   );

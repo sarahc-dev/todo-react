@@ -6,13 +6,14 @@ import { Draggable } from 'react-beautiful-dnd'
 
 const Li = styled.li`
     align-items: center;
-    background-color: ${({ theme }) => theme.listBackground};
+    background: ${({ theme }) => theme.listBackground};
     border-bottom: 1px solid ${({ theme }) => theme.checkBorder};
     display: flex;
     font-size: ${px2rem(12)};
     padding: ${px2rem(16)} ${px2rem(20)};
     ${({ theme, completed }) => completed ? `color: ${theme.completedItems}; text-decoration: line-through;` : `color: ${theme.listItems};`
     }
+    transition: all 1s;
 
     ${MEDIA.desktop} {
         font-size: ${px2rem(18)};

@@ -12,6 +12,7 @@ const ListBottom = styled.div`
     font-size: ${px2rem(12)};
     justify-content: space-between;
     padding: ${px2rem(16)} ${px2rem(20)} ${px2rem(20)};
+    transition: all 1s;
 
     ${MEDIA.desktop} {
         font-size: ${px2rem(14)};
@@ -35,6 +36,7 @@ const Container = styled.div`
     justify-content: center;
     margin: ${px2rem(16)} 0 ${px2rem(40)};
     padding: ${px2rem(15)} 0 ${px2rem(19)};
+    transition: background 1s;
 
     ${MEDIA.layoutShift} {
         box-shadow: unset;

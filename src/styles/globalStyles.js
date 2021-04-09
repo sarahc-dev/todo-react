@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size: ${px2rem(12)};
         line-height: 1;
         padding: ${px2rem(48)} ${px2rem(24)};
+        transition: all 1s;
     }
 
     @media (prefers-reduced-motion: reduce) {

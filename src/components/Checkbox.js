@@ -14,20 +14,22 @@ const Button = styled.button`
     justify-content: center;
     margin-right: ${px2rem(12)};
     width: 20px;
+    transition: border 1s;
     ${({ completed }) => completed && `
     background: ${COLORS.checkBackground};
     border: none;
     `}
-
+    
     &:hover {
         ${({ completed }) => !completed && `
-        border-color: transparent;
+        border: 1px solid transparent;
         background: ${COLORS.checkBackground} border-box;
         -webkit-mask:
         linear-gradient(#fff 0 0) padding-box, 
         linear-gradient(#fff 0 0);
         -webkit-mask-composite: destination-out;
         mask-composite: exclude;
+        transition: border 1s;
         `}
     }
 
