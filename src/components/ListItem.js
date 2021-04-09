@@ -24,12 +24,12 @@ const CloseBtn = styled.button`
     cursor: pointer;
     margin-left: auto;
 
-    ${MEDIA.desktop} {
+    ${MEDIA.desktopLg} {
         visibility: hidden;
     }
 
     ${Container}:hover & {
-        ${MEDIA.desktop} {
+        ${MEDIA.desktopLg} {
            visibility: visible;
         }
     }
