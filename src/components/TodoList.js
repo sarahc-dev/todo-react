@@ -1,5 +1,5 @@
-import { ListItem } from './ListItem'
 import styled from 'styled-components'
+import { ListItem } from './ListItem'
 
 const Container = styled.div`
     background: ${({ theme }) => theme.listBackground};
@@ -8,6 +8,7 @@ const Container = styled.div`
 
 const Ul = styled.ul`
     list-style: none;
+    margin-bottom: 0;
     padding: 0;
 `
 
@@ -17,13 +18,13 @@ export const TodoList = ({ todos, setTodos, filteredTodos, theme }) => {
             <Ul>
                 {filteredTodos.map(todo => (
                     <ListItem 
-                        key={todo.id} 
-                        text={todo.text}
                         completed={todo.completed}
+                        key={todo.id} 
+                        setTodos={setTodos}
+                        text={todo.text}
+                        theme={theme}
                         todo={todo}
                         todos={todos}
-                        setTodos={setTodos}
-                        theme={theme}
                     />
                 ))}
             </Ul>

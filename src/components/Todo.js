@@ -1,31 +1,59 @@
 import styled from 'styled-components'
 import px2rem from '../utils/px2rem'
+import { MEDIA } from '../styles/media'
 
-const Form = styled.form`
-    margin-top: ${px2rem(33)};
-    text-align: center;
-    
-    
-    
+const Container = styled.div`
+    background: ${({ theme }) => theme.listBackground};
+    border-radius: 5px;
+    box-shadow: 0px 35px 50px -15px ${({ theme }) => theme.dropShadow};
+    display: flex;
+    margin: ${px2rem(33)} 0 ${px2rem(16)};
+    padding: ${px2rem(16)} ${px2rem(20)};
+    width: 100%;
+
+    ${MEDIA.desktop} {
+        margin-bottom: ${px2rem(24)};
+        padding: ${px2rem(20)} ${px2rem(24)};
+    }
 `
 
 const Input = styled.input`
-    border: none;
     background: ${({ theme }) => theme.listBackground};
-    border-radius: 0 5px 5px 0;
+    border: none;
     color: ${({ theme }) => theme.inputText};
-    font-size: ${px2rem(12)};
-    padding: ${px2rem(20)} 0;
-    box-shadow: 0px 35px 50px -15px ${({ theme }) => theme.dropShadow};
-
+    font: inherit;
+    width: 90%;
+    
     &::placeholder {
         color: ${({ theme }) => theme.placeholderText};
+    }
+
+    &:active, &:focus {
+        outline: none;
+    }
+
+    ${MEDIA.desktop} {
+        font-size: ${px2rem(18)};
     }
 `
 
 const Button = styled.button`
-    border: none;
     background: ${({ theme }) => theme.listBackground};
+    border: 1px solid ${({ theme }) => theme.checkBorder};
+    border-radius: 50px;
+    height: 20px;
+    margin-right: ${px2rem(12)};
+    width: 20px;
+
+    &:active, &:focus {
+        outline: none;
+    }
+
+    ${MEDIA.desktop} {
+        height: 24px;
+        margin-right: ${px2rem(24)};
+        width: 24px;
+    }
 `
 
 export const Todo = ({ inputText, setInputText, todos, setTodos }) => {
@@ -35,17 +63,21 @@ export const Todo = ({ inputText, setInputText, todos, setTodos }) => {
 
     const submitTodoHandler = (e) => {
         e.preventDefault()
-        setTodos([
+        if (inputText) {
+            setTodos([
             ...todos, {text: inputText, completed: false, id: Math.random() * 1000}
             // replace Math.random with package for generating unique ids
         ])
+        }
         setInputText("")
     }
 
     return (
-        <Form>
-            <Button onClick={submitTodoHandler} type="submit">+</Button>
-            <Input onChange={inputTextHandler} placeholder="Create a new todo..." type="text" value={inputText}/>
-        </Form>
+        <form>
+            <Container>
+                <Button onClick={submitTodoHandler} type="submit"></Button>
+                <Input onChange={inputTextHandler} placeholder="Create a new todo..." type="text" value={inputText}/>
+            </Container>
+        </form>
     )
 }

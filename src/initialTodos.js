@@ -1,7 +1,7 @@
 export const initialTodos = [
     {
         text: "Complete online JavaScript course",
-        completed: false,
+        completed: true,
         id: 1
     },
     {
