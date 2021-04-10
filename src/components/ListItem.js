@@ -13,7 +13,7 @@ const Li = styled.li`
     padding: ${px2rem(16)} ${px2rem(20)};
     ${({ theme, completed }) => completed ? `color: ${theme.completedItems}; text-decoration: line-through;` : `color: ${theme.listItems};`
     }
-    transition: all 1s;
+    transition: background 1s, border 1s, color 1s;
 
     ${MEDIA.desktop} {
         font-size: ${px2rem(18)};
