@@ -14,6 +14,7 @@ letter-spacing: ${px2rem(13)};
 ${MEDIA.desktop} {
     font-size: ${px2rem(40)};
     letter-spacing: ${px2rem(15)};
+    padding-top: ${px2rem(22)};
     padding-bottom: ${px2rem(8)};
 }
 `

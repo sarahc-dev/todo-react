@@ -78,8 +78,8 @@ export const Todo = ({ inputText, setInputText, todos, setTodos }) => {
     return (
         <form>
             <Container>
-                <Button onClick={submitTodoHandler} type="submit"></Button>
-                <Input onChange={inputTextHandler} placeholder="Create a new todo..." type="text" value={inputText}/>
+                <Button onClick={submitTodoHandler} type="submit" aria-label="Create todo"></Button>
+                <Input onChange={inputTextHandler} placeholder="Create a new todo..." type="text" value={inputText} aria-label="Enter todo item"/>
             </Container>
         </form>
     )
