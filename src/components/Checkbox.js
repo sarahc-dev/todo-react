@@ -14,7 +14,7 @@ const Button = styled.button`
     justify-content: center;
     margin-right: ${px2rem(12)};
     width: 20px;
-    transition: border 1s;
+    transition: all 1s;
     ${({ completed }) => completed && `
     background: ${COLORS.checkBackground};
     border: none;
@@ -29,7 +29,6 @@ const Button = styled.button`
         linear-gradient(#fff 0 0);
         -webkit-mask-composite: destination-out;
         mask-composite: exclude;
-        transition: border 1s;
         `}
     }
 
